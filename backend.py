@@ -27,3 +27,9 @@ def get_tasks():
 def mark_task_done(index):
 
     st.session_state["tasks"][index]["done"] = True
+
+
+# Supprimer une tâche
+def delete_task(index):
+
+    del st.session_state["tasks"][index]
