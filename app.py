@@ -3,7 +3,8 @@ import streamlit as st
 from backend import (
     init_tasks,
     get_tasks,
-    mark_task_done
+    mark_task_done,
+    remove_task
 )
 from component.input import task_input_component
 
@@ -32,7 +33,7 @@ tasks = get_tasks()
 
 for i, task in enumerate(tasks):
 
-    col1, col2 = st.columns([0.8, 0.2])
+    col1, col2, col3 = st.columns([0.6, 0.2, 0.2])
 
     with col1:
 
@@ -43,7 +44,7 @@ for i, task in enumerate(tasks):
         )
 
         st.write(
-            f"{status} - {task['task']}"
+            f"{status} - {task['task']} (échéance : {task['due_date']})"
         )
 
     with col2:
@@ -57,3 +58,10 @@ for i, task in enumerate(tasks):
 
                 mark_task_done(i)
                 st.rerun()
+
+    with col3:
+
+        if st.button("Supprimer", key=f"del_{i}"):
+
+            remove_task(task["task"])
+            st.rerun()
