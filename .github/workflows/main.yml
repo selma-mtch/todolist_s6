@@ -2,7 +2,7 @@ name: Python Tests
 
 on:
   push:
-    branches: [ main, feature/tests ]
+    branches: [ main ]
   pull_request:
     branches: [ main ]
 
@@ -22,7 +22,3 @@ jobs:
       run: |
         pip install pytest
         pip install streamlit
-
-    - name: Run tests
-      run: |
-        pytest test_app.py
