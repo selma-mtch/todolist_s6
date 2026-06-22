@@ -22,6 +22,6 @@ def test_delete_task():
     tasks = get_tasks()
 
     assert len(tasks) == 1
-    assert tasks[0]["task"] == "Tâche 2"
+    assert tasks[0][1]["task"] == "Tâche 2"  
 
     logging.info(f" {tasks}")

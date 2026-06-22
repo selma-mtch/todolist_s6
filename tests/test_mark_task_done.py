@@ -19,6 +19,6 @@ def test_mark_task_done():
 
     tasks = get_tasks()
 
-    assert tasks[0]["done"] is True
+    assert tasks[0][1]["done"] is True  
 
     logging.info(f"[OK] {tasks}")
