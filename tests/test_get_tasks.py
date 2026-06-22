@@ -19,6 +19,7 @@ def test_get_tasks():
 
     assert isinstance(tasks, list)
     assert len(tasks) == 1
-    assert tasks[0]["task"] == "Faire les courses"
+    assert tasks[0][1]["task"] == "Faire les courses"
+    assert tasks[0][1]["done"] is False
 
     logging.info(f"[OK] {tasks}")

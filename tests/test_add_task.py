@@ -18,7 +18,7 @@ def test_add_task():
     tasks = get_tasks()
 
     assert len(tasks) == 1
-    assert tasks[0]["task"] == "Acheter du pain"
-    assert tasks[0]["done"] is False
+    assert tasks[0][1]["task"] == "Acheter du pain"  
+    assert tasks[0][1]["done"] is False  
 
     logging.info(f"tasks = {tasks}")
